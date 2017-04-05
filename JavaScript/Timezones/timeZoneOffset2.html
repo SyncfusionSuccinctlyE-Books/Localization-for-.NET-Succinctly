@@ -1,0 +1,12 @@
+<html>
+<body>
+<script type="text/javascript">
+
+	var localTime = new Date();
+	var utc = new Date(localTime.getTime() + localTime.getTimezoneOffset()*60000);
+	document.writeln(localTime + "<br>");
+	document.writeln(utc + "<br>");
+
+</script>
+</body>
+</html>

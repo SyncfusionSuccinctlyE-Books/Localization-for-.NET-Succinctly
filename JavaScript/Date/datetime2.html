@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Parse date example</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/globalize.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.cultures.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var amount = 5.382;
+    document.writeln("Total amount: " + amount.toLocaleString('sv-se', { style: 'currency' }));
+</script>
+
+    <script type="text/javascript">
+        //var enResult = Globalize.parseDate("1/2/2003", null, "en"); 
+        //var frResult = Globalize.parseDate("1/2/2003", null, "fr");
+
+        //document.writeln("EN: " + enResult + "<br>");
+        //document.writeln("FR: " + frResult + "<br>");
+
+        var amount = 5.382;
+        document.writeln("Total amount: " + amount.toLocaleString('sv-se', { style: 'currency', currency: 'SEK' }));
+
+        //var language = window.navigator.userLanguage || window.navigator.language;
+        //console.log(window.navigator.userLanguage);
+        //console.log(window.navigator.language);
+        //console.log(language);
+    </script>
+</body>
+</html>
+

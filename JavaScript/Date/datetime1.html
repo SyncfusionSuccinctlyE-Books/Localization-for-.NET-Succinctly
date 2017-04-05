@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Parse date example</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/globalize.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.cultures.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+
+        //Globalize.culture("en");
+        var enResult = Globalize.parseDate("1/2/2003", null, "en"); 
+        //Globalize.culture("fr");
+        var frResult = Globalize.parseDate("1/2/2003", null, "fr");
+
+        document.writeln("EN: " + enResult + "<br>");
+        document.writeln("FR: " + frResult + "<br>");
+
+    </script>
+</body>
+</html>
+

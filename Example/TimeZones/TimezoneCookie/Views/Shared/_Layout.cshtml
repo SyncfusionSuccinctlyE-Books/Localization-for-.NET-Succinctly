@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        function getCookie(name) {
+            var cookies = document.cookie.split(";");
+            var i = 0;
+            for (; i < cookies.length; i++) {
+                var cookieName = cookies[i].substr(0, cookies[i].indexOf("="));
+                cookieName = cookieName.replace(/^\s+|\s+$/g, "");
+                if (cookieName == name) {
+                    var cookieValue = cookies[i].substr(cookies[i].indexOf("=") + 1);
+                    return unescape(cookieValue);
+                }
+            }
+
+            return null;
+        }
+
+        if (getCookie('userTimeZone') === null) {
+            var date = new Date();
+            var offset = -date.getTimezoneOffset() / 60;
+            var timeZone = 'UTC';
+            if (offset < 0) {
+                timeZone = "UTC" + offset;
+            } else {
+                timeZone = 'UTC+' + offset;
+            }
+            document.cookie = 'userTimeZone=' + timeZone;
+
+            // Reload page and include a query string var
+            // to be able to detect if cookies are enabled
+            if (window.location.indexOf('?') == -1) {
+                window.location += window.location.indexOf('?') == -1
+                    ? '?userTimeZone=' + timeZone
+                    : '&userTimeZone=' + timeZone;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>My MVC Application</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            @RenderBody()
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+</body>
+</html>

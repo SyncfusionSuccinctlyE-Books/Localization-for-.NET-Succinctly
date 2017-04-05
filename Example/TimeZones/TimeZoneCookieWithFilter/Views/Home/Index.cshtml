@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yoursite</title>
+    <script type="text/javascript">
+        var date = new Date();
+        var offset = -date.getTimezoneOffset() / 60;
+        var timeZone = 'UTC';
+        if (offset < 0) {
+            timeZone = "UTC" + offset;
+        } else {
+            timeZone = 'UTC+' + offset;
+        }
+        document.cookie = 'userTimeZone=' + timeZone;
+        window.location = '/home/?userTimeZone=' + timeZone;
+    </script>
+</head>
+<body>
+    <a href="@Url.Action("Front")">Visit main page</a>
+</body>
+</html>
