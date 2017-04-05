@@ -32,7 +32,7 @@ namespace TimezoneCookie.Controllers
 
             // default time zone
             var cookieValue = cookieTimeZone == null ? "UTC" : cookieTimeZone.Value;
-            ViewBag.Message = "Hello. You time zone is: " + cookieValue;
+            ViewBag.Message = "Hello. Your time zone is: " + cookieValue;
             return View();
         }
 
