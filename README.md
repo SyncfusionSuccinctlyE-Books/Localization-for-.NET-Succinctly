@@ -1,1 +1,1 @@
-Code examples for Localization for .NET Succinctly by Jonas Gauffin. Repository originally available at [https://github.com/jgauffin/books/tree/master/Localization].
+Code examples for Localization for .NET Succinctly by Jonas Gauffin. Repository originally available at https://github.com/jgauffin/books/tree/master/Localization.
